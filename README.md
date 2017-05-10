@@ -10,8 +10,8 @@
 ```
 ##3:运行程序提示未找到
 ```
-    使用 file 运行文件名  进行查看,如果其中带有 32bit 关键字,说明系统库版本不匹配.需要安装32位libc库,使用命令sudo apt install libc6:i386 命令安装
-    32位libc库即可.
+    使用 file 运行文件名  进行查看,如果其中带有 32bit 关键字,说明系统库版本不匹配.
+    需要安装32位libc库,使用命令sudo apt install libc6:i386 安装32位libc库即可.
     更多32位库的安装(64位机上编译编译32位程序)
     sudo apt-get install g++-multilib
     sudo apt-get install libncurses5:i386
