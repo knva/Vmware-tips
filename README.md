@@ -24,3 +24,11 @@
     如文件只读,可以使用sudo chown 用户名 文件名 进行修改所有者
     如文件运行权限不足,可以使用sudo chmod 777 文件名 进行权限修改
 ```
+
+## 5:powerpc linux sdk 从source安装交叉编译工具链的方法
+```
+    下载sdk source  然后挂载并安装
+    按照文档说明进行安装
+    所有操作需要使用user权限,不能使用root
+    安装完成后使用$CC 命令进行编译hello world 测试.
+```
