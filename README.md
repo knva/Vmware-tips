@@ -3,6 +3,41 @@
 ## 1:ubuntu安装tools后,无法进行虚拟机内外的复制粘贴 
 ```
     需要使用最新版本虚拟机. 
+    安装步骤：
+
+1 更新下系统源
+
+sudo apt update
+
+2 安装open-vm-tools
+
+sudo apt install open-vm-tools
+
+3 如果要实现文件夹共享，需要安装 open-vm-tools-dkms
+
+sudo apt install open-vm-tools-dkms
+
+4 桌面环境还需要安装 open-vm-tools-desktop 以支持双向拖放文件
+
+sudo apt install open-vm-tools-desktop
+
+最后在虚拟机的设置→显示器里面开启 3D 加速。
+
+在虚拟机设置里设置好共享文件夹，启动虚拟机后，如果Ubuntu中没有设置的共享文件。可以通过下面的两种方法解决：
+
+1 可以使用vmhgfs-fuse命令，比如在虚拟机里有个目录 ~/share,终端中切换到家目录，然后：
+
+vmhgfs-fuse share
+
+此方法适合不是每次都使用共享文件的状况，可以编写一个脚本share.sh放到家目录
+
+#!/bin/bash
+
+vmhgfs-fuse share
+
+2 如果要在开机是自动挂载共享文件夹，则需更改/etc/fstab文件。打开文件后在最后添加：
+
+.host:/         /mnt/hgfs               fuse.vmhgfs-fuse allow_other,defaults   0       0
 ```
 ## 2:共享文件夹
 ```
