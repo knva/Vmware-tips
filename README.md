@@ -48,9 +48,10 @@ vmhgfs-fuse share
     使用 file 运行文件名  进行查看,如果其中带有 32bit 关键字,说明系统库版本不匹配.
     需要安装32位libc库,使用命令sudo apt install libc6:i386 安装32位libc库即可.
     更多32位库的安装(64位机上编译编译32位程序)
-    sudo apt-get install g++-multilib
-    sudo apt-get install libncurses5:i386
-    sudo apt-get install libc6:i386 libgcc1:i386 gcc-4.6-base:i386 libstdc++5:i386 libstdc++6:i386
+    sudo apt install g++-multilib
+    sudo apt install libncurses5:i386
+    sudo apt install libc6:i386 libgcc1:i386  libstdc++5:i386 libstdc++6:i386
+    sudo apt install lib32z1
 ```
 
 ## 4:文件权限修改
