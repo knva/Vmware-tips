@@ -68,3 +68,8 @@ vmhgfs-fuse share
     所有操作需要使用user权限,不能使用root
     安装完成后使用$CC 命令进行编译hello world 测试.
 ```
+
+## 6:iptables nat删除
+```
+首先使用这条命令查看当前nat表的防火墙规则：iptables -t nat -L -n --line-numbers，然后确定你要删除的是哪一条规则，并且看一下它是第几条规则，规则最前面有序号。接下来删除，使用命令：iptables -t nat -D PREROUTING 1，这里假如它的序号是1。
+```
